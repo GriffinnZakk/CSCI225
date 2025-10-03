@@ -43,3 +43,63 @@ body {
   margin: 0;
   padding-top: 60px; 
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #222;
+  color: white;
+  padding-top: 60px; /* space for navbar */
+}
+
+/* Navbar from before */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.navbar li { flex: 1; }
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.navbar a:hover { background-color: #575757; }
+
+/* Grid layout */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  border: 2px solid white;
+  border-collapse: collapse;
+}
+
+/* Each cell */
+.grid-item {
+  border: 1px solid white;  /* white dividers */
+  padding: 20px;
+  min-height: 200px;
+}
+
+/* Tables inside schedule look clean */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: center;
+}
