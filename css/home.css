@@ -1,0 +1,45 @@
+body {
+  background-color: rgb(43, 178, 178);
+}
+
+/* Make the navbar stick to the top */
+.navbar {
+  background-color: #333;   /* dark background */
+  overflow: hidden;
+  position: fixed;          /* sticks to the top */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Remove bullets and arrange horizontally */
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;   /* put <li> side by side */
+}
+
+.navbar li {
+  flex: 1; /* tabs spread evenly */
+}
+
+/* Tab links */
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  background-color: #575757;
+}
+
+body {
+  margin: 0;
+  padding-top: 60px; 
+}
