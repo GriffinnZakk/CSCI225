@@ -1,105 +1,185 @@
+:root {
+    --body-bg: url(../img/2293113.jpg); /*Background Image*/
+    --footer-bg: #985555;               /*BackGround color: Footer*/
+    --font-color: rgb(44, 44, 44);
+    --list-color: red;                  /*List font color*/
+    --h1-shadow: 2px 2px 5px #000000;
+}
+
+/* Font for all paragraphs */
 body {
-  background-color: rgb(43, 178, 178);
+    margin: 0;
+    font-family: 'Arial', sans-serif; /*Web Font*/
+    background-image: var(--body-bg); 
+    background-size: cover;
+    background-attachment: fixed;
+    line-height: 1.6;               /*Paragraph line height*/
+    padding-bottom: 80px; 
+
 }
 
-/* Make the navbar stick to the top */
-.navbar {
-  background-color: #333;   /* dark background */
-  overflow: hidden;
-  position: fixed;          /* sticks to the top */
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+/* Paragraph text-align */
+p {
+    color: var(--font-color);
+    text-align: justify;            /*Set text align: justify*/
 }
 
-/* Remove bullets and arrange horizontally */
+/* Selector practice: first letter special style */
+p::first-letter {
+    font-size: 1.5em;
+    color: rgb(223, 27, 66);        
+    font-weight: bold;
+}
+
+/* Text: transform h1, letter-spacing, text-shadow */
+h1 {
+    text-transform: uppercase;             /*H1 UPPERCASE*/
+    letter-spacing: 3px;                   /*h1 Letter spacing*/
+    text-shadow: var(--h1-shadow);          /*h1 Text shadow*/
+    border: 3px solid #fff;                /*Border Style*/
+    border-radius: 10px;                
+    padding: 5px;
+    transition: all 1s ease;  
+}
+
+/* Transformation: h1:hover */
+h1:hover {
+    transform: scale(1.1) rotate(2deg); 
+}
+
+/* Link: text-decoration none, hover style */
+a {
+    text-decoration: none;      /*Text decoration none*/
+    color: rgb(0, 0, 141);      /*Original link color*/
+    font-weight: bold;              
+    transition: color 3s ease;   /*special link color change*/
+}
+a:hover {
+    color: rgb(255, 166, 0);    /*link color after hover*/
+}
+
+/* Font, Color: apply style to all lists */
+ul, ol {
+    color: var(--list-color);   /*List color (red)^*/
+    font-weight: 600;           /*Font weight*/
+}
+
+/* List: image marker */
+ul {
+    list-style-image: url(../img/star.png); /*Special list bullet*/
+}
+
+/* List: navigation in one line */
 .navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;   /* put <li> side by side */
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
+/* Border: rounded li in navigation */
 .navbar li {
-  flex: 1; /* tabs spread evenly */
+    flex: 1;
+    border-radius: 10px;
 }
 
-/* Tab links */
-.navbar a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+
+
+/* Border: portfolio, contact, schedule */
+.portfolio, .contact, .schedule {
+    border-right: 3px solid #fff;       /*Add border right, style*/
+    border-bottom: 3px solid #fff;
+    padding: 15px;
 }
 
-/* Hover effect */
-.navbar a:hover {
-  background-color: #575757;
-}
-
-body {
-  margin: 0;
-  padding-top: 60px; 
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #222;
-  color: white;
-  padding-top: 60px; /* space for navbar */
-}
-
-/* Navbar from before */
-.navbar {
-  background-color: #333;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-.navbar li { flex: 1; }
-.navbar a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-.navbar a:hover { background-color: #575757; }
-
-/* Grid layout */
-.grid-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* two columns */
-  border: 2px solid white;
-  border-collapse: collapse;
-}
-
-/* Each cell */
-.grid-item {
-  border: 1px solid white;  /* white dividers */
-  padding: 20px;
-  min-height: 200px;
-}
-
-/* Tables inside schedule look clean */
+/* Table: border, padding, vertical-align, empty-cells */
 table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 table th, table td {
-  border: 1px solid white;
-  padding: 8px;
-  text-align: center;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 8px;
+    vertical-align: middle;
+    empty-cells: show;
+}
+
+/* Table: even rows */
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Selector practice: first paragraph box shadow */
+.portfolio p:first-of-type {
+    box-shadow: 3px 3px 10px rgb(133, 133, 133);
+    padding: 10px;
+    background: #ffffff;
+}
+
+/* Grid Layout */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 100px repeat(2, 1fr) 100px;
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  margin: 20px;
+}
+
+/* Assigning items to specific grid positions */
+.introduction {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.my-picture {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.hobbies {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.assignment {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.portfolio {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.schedule {
+  grid-column: 3/4;
+  grid-row: 4/5;
+}
+
+.grid-item {
+  border: 1px solid white; /* white dividers */
+  padding: 15px;
+}
+
+
+/* Any other style rules */
+footer {
+    /* Footer background gradient */
+    background-image: linear-gradient(90deg, red, blue, green);
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+    animation: changeColor 3s infinite running;
+}
+
+/* Keyframes for footer gradient animation */
+@keyframes changeColor {
+    from { background-image: linear-gradient(90deg, red, blue, green); }
+    50% { background-image: linear-gradient(180deg, red, blue, green); }
+    to { background-image: linear-gradient(270deg, red, blue, green); }
 }
